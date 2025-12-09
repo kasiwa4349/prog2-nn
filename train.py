@@ -56,7 +56,7 @@ n_epochs=20
 train_loss_log = []
 val_loss_log=[]
 train_acc_log=[]
-accuracy_log = []
+val_acc_log = []
 
 for epoch in range(n_epochs):
     print(f'epoch {epoch+1}/{n_epochs}')
@@ -64,20 +64,26 @@ for epoch in range(n_epochs):
     time_start = time.time()
     train_loss=models.train(model,dataloader_train,loss_fn,optimizer)
     time_end = time.time()
-    print(f'    training loss: {train_loss} ({time_end-time_start:.3f}s)')
+    print(f'    training loss: {train_loss:.3f} ({time_end-time_start:.3f}s)')
     train_loss_log.append(train_loss)
 
+    time_start = time.time()
     val_loss=models.test(model, dataloader_test, loss_fn)
-    print(f'    validation loss: {val_loss}')
+    time_end = time.time()
+    print(f'    validation loss: {val_loss:.3f} ({time_end-time_start:.3f}s)')
     val_loss_log.append(val_loss)
 
+    time_start=time.time()
     train_acc = models.test_accuracy(model, dataloader_train)
-    print(f'    training accuracy: {train_acc*100:.3f}%')
+    time_end=time.time()
+    print(f'    training accuracy: {train_acc*100:.3f} ({time_end-time_start:.3f}s)')
     train_acc_log.append(train_acc)
 
-    accuracy=models.test_accuracy(model,dataloader_test)
-    print(f'    validation accuracy: {accuracy*100:.3f}%')
-    accuracy_log.append(accuracy)
+    time_start=time.time()
+    val_acc=models.test_accuracy(model,dataloader_test)
+    time_end=time.time()
+    print(f'    validation accuracy: {val_acc*100:.3f} ({time_end-time_start:.3f}s)')
+    val_acc_log.append(val_acc)
     
 
 #グラフを表示
@@ -92,7 +98,7 @@ plt.ylabel('loss')
 plt.grid()
 
 plt.subplot(122)
-plt.plot(range(1,n_epochs+1),accuracy_log)
+plt.plot(range(1,n_epochs+1),val_acc_log)
 plt.plot(range(1,n_epochs+1),train_acc_log)
 plt.legend(["train","validation"])
 plt.xlabel('epochs')
