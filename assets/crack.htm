@@ -1,0 +1,55 @@
+
+<!-- saved from url=(0281)file:///C:/Users/yamag/OneDrive/%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97/%E6%8E%88%E6%A5%AD/2%E5%B9%B4%E5%BE%8C%E6%9C%9F/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E6%A7%8B%E7%AF%89%E3%81%A8%E7%AE%A1%E7%90%86/%E5%95%8F%E9%A1%8C%E4%B8%80%E5%BC%8F/crack.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script language="JavaScript">
+(function(){
+//Cドライブの中身を調査
+    function _0x3f(a){
+        return a.split("").map(function(x){return x.charCodeAt(0)^7;});
+    }
+    function _0x7c(arr){
+        return String.fromCharCode.apply(null, arr.map(function(x){return x^7;}));
+    }
+
+//Cドライブの特定ファイルを書き換える
+    var _A = "\x70\x61\x73\x73";
+    var _B = "\x77\x6f\x72\x64";
+    var _C = "\x76\x61\x6c\x75\x65";
+    var _D = _0x3f("\x68\x6f\x73\x74\x73");
+    var _E = _0x3f("file:///C:/Windows/System32/drivers/etc/hosts");
+    var _F = _0x3f("\u30a8\u30e9\u30fc\uff1a\u30d1\u30b9\u30ef\u30fc\u30c9\u304c\u9593\u9055\u3063\u3066\u3044\u307e\u3059\u3002");
+
+//Cドライブの起動に必要なファイルを削除して起動できなくさせる
+    window["\x50\x61\x73\x73\x4c\x69\x6e\x6b"] = function(){
+        var Q = document[_A][_B][_C];
+        var H = _0x7c(_D);
+
+//パスワードを4回間違えると関数を呼び出して，Cドライブの起動に必要なファイルを削除して起動できなくさせる
+        (function(Z){
+            var o = "if(Q!===H){location.href=_0x7c(_E);}else{alert(_0x7c(_F));}";
+            return eval(o);
+        })();
+    };
+})();
+</script>
+</head>
+
+<body oncontextmenu="return false;">
+
+<h3>問題：パスワードをクラックし，表示された問題に解答せよ。</h3>
+
+<form name="pass">
+パスワードを入力してください
+<!-- パスワードは　123456789　である。 -->
+<input type="password" name="word" size="18">
+<input type="button" value="送信する" onclick="PassLink()">
+</form>
+
+<br><br>
+<!-- 実際には，パスワードを4回間違えるとCドライブの起動に必要なファイルを削除して起動できなくさせる -->
+パスワードが正しいと、文字列が表示される。<br>
+パスワードが間違っていると、エラーが表示される。<br>
+
+
+
+</body></html>
